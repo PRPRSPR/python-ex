@@ -106,7 +106,37 @@ for i in range(10) :
 
 # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
+sum=0
+
 for i in range(1, 11) :
     # range(1, 10+1)
     sum += i    
 print(sum)
+
+
+for i in range(2,10) :
+    for j in range(1, 10) :
+        print(f"{i}x{j}={i*j}")
+
+for i in range(1,6) :
+    print("*"*i)
+
+list =  ["banana", "orange", "apple"]
+for fruit in list :
+    print(fruit)
+
+list =  ["banana", "orange", "apple"]
+for idx,fruit in enumerate(list) :
+    print(f"{idx+1} : {fruit}")
+# 1 : banana / 2 : orange / 3 : apple
+
+text = "Hello Python"
+for char in text :
+    print(char, end=" ")
+# H e l l o   P y t h o n
+
+hong = {"name": "홍길동","age":30,"addr":"인천"}
+for key, value in hong.items() :
+    print(f"{key} : {value}")
+# name : 홍길동 / age : 30 / addr : 인천
+

@@ -19,3 +19,24 @@ while True :
         break
     else :
         print("오답")
+
+
+
+# up and down 랜덤숫자 (1~100)
+# 몇번만에 맞췄는지
+
+ran = random.randint(1,100)
+count = 0
+while True :
+    user = int(input("Up and Down : "))
+    count+=1
+    if user < ran :
+        print("Up")
+    elif user > ran :
+        print("Down")
+    elif user == ran :
+        print(f"정답! {count}번만에 성공")
+        break
+    else : 
+        print("잘못된 입력")
+

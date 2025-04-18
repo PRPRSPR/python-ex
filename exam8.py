@@ -25,8 +25,14 @@ import random
 
 def lotto():
 	list = []
-    
+	while len(list) < 6:
+		ran = random.randint(1, 45)
+		if ran not in list :
+			list.append(ran)
 	return list
+	
+print(lotto())
+
 
 
 # 3. 단어별 첫 글자 대문자로 바꾸기 (타이틀 케이스)
@@ -39,8 +45,23 @@ def lotto():
 # to_title_case 함수 완성시키기
 
 def to_title_case(text):
-	
-    pass
+	words = text.split()
+	result = ""
+	for word in words :
+		result += word[0].upper() + word[1:].lower()+ " "
+	return result
+
+print(to_title_case("have a good day"))
+    
+
+def to_title_case2(text):
+	words = text.split()
+	resultList = []
+	for word in words :
+		resultList.append(word[0].upper() + word[1:].lower())
+	return ' '.join(resultList)
+
+print(to_title_case2("have a good day"))
 
 
 
@@ -54,7 +75,13 @@ def to_title_case(text):
 # compress_list 함수 완성시키기
 
 def compress_list(list):
-	pass
+	result = [list[0]]
+	for i in range(1, len(list)):
+		if list[i] != list [i-1]:
+			result.append(list[i])
+	return result
+
+print(compress_list([1,1,2,2,3,1,1]))
 
 
 # 5. 자리수 분리 및 합계 구하기
@@ -67,5 +94,9 @@ def compress_list(list):
 # def split_sum(num) : 
 # 	pass
 
-def split_sum(num) : 
-	pass
+def split_sum(number) : 
+	digits = [int(num) for num in str(number)]
+	total = sum(digits)
+	return digits, total
+
+print(split_sum(1352))
